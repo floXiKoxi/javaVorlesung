@@ -9,8 +9,13 @@ public class MathClass {
         int xy = x+y;
         return xy;
     }
+    public double addition(double x, double y){
+
+        double xy = x+y;
+        return xy;
+    }
     //Fucntion calculates product from 1 to n
-    public static long product(int n) {
+    public long product(int n) {
         if (n == 0) {
             return 1;
         }
@@ -31,5 +36,12 @@ public class MathClass {
         }
         double sqrtDouble = Math.sqrt(n);
         return sqrtDouble;
+    }
+    public double pythagoras(int a, int b){
+
+        double prevPythagoras = (a*a) + (b*b);
+        double c = Math.sqrt(prevPythagoras);
+
+        return c;
     }
 }
