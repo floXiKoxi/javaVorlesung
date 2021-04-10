@@ -6,8 +6,10 @@ public class Auto {
     private String hersteller, typ;
     private double breite;
 
+    //Constructor
     public Auto(){ }
 
+    //Setter
     public void setBreite(double breite) {
         this.breite = breite;
     }
@@ -24,6 +26,7 @@ public class Auto {
         this.typ = typ;
     }
 
+    //Getter
     public double getBreite() {
         return breite;
     }
