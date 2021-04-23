@@ -1,4 +1,4 @@
-package de.flox.vorlesungen.objektorientierung;
+package de.flox.auto.utils;
 
 public class Auto {
 
@@ -43,3 +43,4 @@ public class Auto {
         return typ;
     }
 }
+
