@@ -9,22 +9,23 @@ public class Auto {
     //Constructor
     public Auto(){ }
 
-    public Auto(String hersteller, String typ, int raeder, double breite){
-        setHersteller(hersteller);
-        setBreite(breite);
-        setTyp(typ);
-        setRaeder(raeder);
+    public Auto(String hersteller, String typ, int raeder, double breite, String farbe){
+        this.hersteller = hersteller;
+        this.typ = typ;
+        this.raeder = raeder;
+        this.breite = breite;
+        this.farbe = farbe;
     }
 
-    public void drucken(Auto auto){
+    public void drucken(){
 
-        System.out.println("Hersteller: "+auto.getHersteller()+"\n" +
-                "Typ: "+auto.getTyp()+"\n" +
-                "Räder: "+auto.getRaeder()+"\n" +
-                "Breite: "+auto.getBreite());
+        System.out.println("Hersteller: "+getHersteller()+"\n" +
+                "Typ: "+getTyp()+"\n" +
+                "Räder: "+getRaeder()+"\n" +
+                "Breite: "+getBreite());
 
-        auto.lackiereAuto();
-        auto.lackiereAuto("rot");
+        lackiereAuto();
+        lackiereAuto("rot");
 
     }
 

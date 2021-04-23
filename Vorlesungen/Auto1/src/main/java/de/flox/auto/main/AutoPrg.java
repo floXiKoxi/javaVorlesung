@@ -8,8 +8,8 @@ public class AutoPrg {
 
     public static void main(String[] args){
 
-        Auto autoVW = new Auto("VW", "Golf", 4, 1.83);
-        autoVW.drucken(autoVW);
+        Auto autoVW = new Auto("VW", "Golf", 4, 1.83, "Weiß");
+        autoVW.drucken();
 
         AutoPrg autoPrg = new AutoPrg();
         autoPrg.fillArray();
@@ -19,15 +19,14 @@ public class AutoPrg {
     private void fillArray(){
 
         String[] herstellerArray = {"VW", "BMW", "Audi", "Opel", "Mercedes-Benz"};
-        String[] typArray = {"Golf", "1er", "A5", "Corsa", "S-Klasse"};
+        String[] typArray = {"Golf", "M3", "A5", "Corsa", "S-Klasse"};
+        String[] farbArray = {"Weiß", "Blau", "Rot", "Grün", "Gelb"};
         int raeder = 4;
         double breite = 2.05;
 
         for(int i=0; i<5;i++){
 
-            String hersteller = herstellerArray[i];
-            String typ = typArray[i];
-            getAutoArray()[i] = new Auto(hersteller, typ, raeder, breite);
+            getAutoArray()[i] = new Auto(herstellerArray[i], typArray[i], raeder, breite, farbArray[i]);
 
         }
         System.out.println("Auto Array gefüllt");
@@ -37,7 +36,8 @@ public class AutoPrg {
 
         for(Auto auto : getAutoArray()){
 
-            System.out.println("Hersteller: "+auto.getHersteller() + ", Typ: "+auto.getTyp() + ", Raeder: "+auto.getRaeder()+ ", Breite: "+auto.getBreite());
+            System.out.println("Hersteller: "+auto.getHersteller() + ", Typ: "+auto.getTyp() +
+                    ", Raeder: "+auto.getRaeder()+ ", Breite: "+auto.getBreite() + ", Farbe: "+auto.getFarbe());
 
         }
 
