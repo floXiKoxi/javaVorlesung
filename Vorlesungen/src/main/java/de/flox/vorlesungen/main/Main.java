@@ -23,6 +23,12 @@ public class Main {
 
         while(run == true){
 
+            System.out.print("Gib die erste Zahl ein: ");
+            double x = inOutReader.getDouble();
+
+            System.out.print("Gib die zweite Zahl ein: ");
+            double y = inOutReader.getDouble();
+
             System.out.println("Was willst du nun tun ?\n" +
                     "a) Zwei Zahlen addieren ?\n" +
                     "b) Subtrahieren von 2 Zahlen?\n" +
@@ -34,50 +40,28 @@ public class Main {
 
             switch (select){
                 case "a":
-                    System.out.print("Gib die erste Zahl ein: ");
-                    double x = inOutReader.getDouble();
-
-                    System.out.print("Gib die zweite Zahl ein: ");
-                    double y = inOutReader.getDouble();
-
                     System.out.println("Summe von "+x+" und "+y+": "+mathClass.addition(x, y));
                     break;
 
                 case "b":
-                    System.out.print("Gib die erste Zahl ein: ");
-                    double xMinus = inOutReader.getDouble();
-
-                    System.out.print("Gib die zweite Zahl ein: ");
-                    double yMinus = inOutReader.getDouble();
-
-                    System.out.println("Subtraktion von "+xMinus+" und "+yMinus+": "+mathClass.subtrahieren(xMinus, yMinus));
+                    System.out.println("Subtraktion von "+x+" und "+y+": "+mathClass.subtrahieren(x, y));
                     break;
 
                 case "c":
-                    System.out.print("Gib die erste Zahl ein: ");
-                    double xMulti = inOutReader.getDouble();
 
-                    System.out.print("Gib die zweite Zahl ein: ");
-                    double yMulti = inOutReader.getDouble();
-
-                    System.out.println("Multiplikation von "+yMulti+" und "+yMulti+": "+mathClass.multiplikation(yMulti, yMulti));
+                    System.out.println("Multiplikation von "+x+" und "+y+": "+mathClass.multiplikation(x, y));
                     break;
 
                 case "d":
-                    System.out.print("Gib die erste Zahl ein: ");
-                    double xDivide = inOutReader.getDouble();
 
-                    System.out.print("Gib die zweite Zahl ein: ");
-                    double yDivide = inOutReader.getDouble();
-
-                    if(yDivide == 0){
-                        while(yDivide == 0){
+                    if(y == 0){
+                        while(y == 0){
                             System.out.print("Gib die zweite Zahl ein die größer als 0 ist: ");
-                            yDivide = inOutReader.getDouble();
+                            y = inOutReader.getDouble();
                         }
                     }
 
-                    System.out.println("Division von "+xDivide+" und "+yDivide+": "+mathClass.division(xDivide, yDivide));
+                    System.out.println("Division von "+x+" und "+y+": "+mathClass.division(x, y));
                     break;
 
                 case "x":
