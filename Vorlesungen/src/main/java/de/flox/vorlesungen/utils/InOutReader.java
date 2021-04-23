@@ -26,12 +26,23 @@ public class InOutReader {
     public double getDouble(){
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String getString = "";
+        double result = 0;
         try{
             getString = reader.readLine();
+
         }catch(IOException e){
             e.printStackTrace();
         }
-        return Double.valueOf(getString);
+        try {
+            result = Double.parseDouble(getString);  // convert it to double
+        }
+        catch (NumberFormatException nfe) {
+            System.out.println("Fehler: Bitte eine valide Zahl eingeben" + nfe.toString());
+            System.out.print("\nBitte gib eine Zahl ein! ");
+            return getDouble();
+        }
+
+        return result;
     }
     public int getInt(){
 

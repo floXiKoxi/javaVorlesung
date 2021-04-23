@@ -1,11 +1,5 @@
 package de.flox.vorlesungen.main;
 
-/*
-    Klasse erstellt am 09.04.2021
-    Florian Wilk
-*/
-
-import de.flox.vorlesungen.functions.HelloWorld;
 import de.flox.vorlesungen.functions.MathClass;
 import de.flox.vorlesungen.utils.InOutReader;
 
