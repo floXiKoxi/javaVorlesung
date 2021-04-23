@@ -9,6 +9,13 @@ public class Auto {
     //Constructor
     public Auto(){ }
 
+    public Auto(String hersteller, String typ, int raeder, double breite){
+        setHersteller(hersteller);
+        setBreite(breite);
+        setTyp(typ);
+        setRaeder(raeder);
+    }
+
     //Setter
     public void setBreite(double breite) {
         this.breite = breite;
