@@ -13,6 +13,9 @@ public class AutoPrg {
                 "Räder: "+autoVW.getRaeder()+"\n" +
                 "Breite: "+autoVW.getBreite());
 
+        autoVW.lackiereAuto();
+        autoVW.lackiereAuto("rot");
+
     }
 
 }

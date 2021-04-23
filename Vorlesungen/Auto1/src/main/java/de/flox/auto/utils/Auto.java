@@ -3,7 +3,7 @@ package de.flox.auto.utils;
 public class Auto {
 
     private int raeder;
-    private String hersteller, typ;
+    private String hersteller, typ, farbe;
     private double breite;
 
     //Constructor
@@ -14,6 +14,16 @@ public class Auto {
         setBreite(breite);
         setTyp(typ);
         setRaeder(raeder);
+    }
+
+    //Methods
+    public void lackiereAuto(){
+        setFarbe("schwarz");
+        System.out.println("Das Auto wurde "+getFarbe()+" lackiert");
+    }
+    public void lackiereAuto(String neuewFarbe){
+        setFarbe(neuewFarbe);
+        System.out.println("Das Auto wurde "+getFarbe()+" lackiert");
     }
 
     //Setter
@@ -33,6 +43,10 @@ public class Auto {
         this.typ = typ;
     }
 
+    public void setFarbe(String farbe) {
+        this.farbe = farbe;
+    }
+
     //Getter
     public double getBreite() {
         return breite;
@@ -48,6 +62,10 @@ public class Auto {
 
     public String getTyp() {
         return typ;
+    }
+
+    public String getFarbe() {
+        return farbe;
     }
 }
 
