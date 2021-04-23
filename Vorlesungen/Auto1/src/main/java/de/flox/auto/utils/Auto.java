@@ -16,6 +16,18 @@ public class Auto {
         setRaeder(raeder);
     }
 
+    public void drucken(Auto auto){
+
+        System.out.println("Hersteller: "+auto.getHersteller()+"\n" +
+                "Typ: "+auto.getTyp()+"\n" +
+                "Räder: "+auto.getRaeder()+"\n" +
+                "Breite: "+auto.getBreite());
+
+        auto.lackiereAuto();
+        auto.lackiereAuto("rot");
+
+    }
+
     //Methods
     public void lackiereAuto(){
         lackiereAuto("schwarz");
