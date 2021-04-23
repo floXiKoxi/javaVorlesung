@@ -18,11 +18,10 @@ public class Auto {
 
     //Methods
     public void lackiereAuto(){
-        setFarbe("schwarz");
-        System.out.println("Das Auto wurde "+getFarbe()+" lackiert");
+        lackiereAuto("schwarz");
     }
-    public void lackiereAuto(String neuewFarbe){
-        setFarbe(neuewFarbe);
+    public void lackiereAuto(String neueFarbe){
+        setFarbe(neueFarbe);
         System.out.println("Das Auto wurde "+getFarbe()+" lackiert");
     }
 
