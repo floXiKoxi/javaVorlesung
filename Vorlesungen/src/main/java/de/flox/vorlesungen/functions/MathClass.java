@@ -14,6 +14,21 @@ public class MathClass {
         double xy = x+y;
         return xy;
     }
+    public double subtrahieren(double x, double y){
+
+        return x-y;
+
+    }
+
+    public double multiplikation(double x, double y){
+
+        return x*y;
+    }
+    public double division(double x, double y){
+
+        return x/y;
+    }
+
     //Fucntion calculates product from 1 to n
     public long product(int n) {
         if (n == 0) {

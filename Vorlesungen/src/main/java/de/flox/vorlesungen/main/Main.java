@@ -13,41 +13,13 @@ public class Main {
 
     public static void main(String[] args){
 
-        //Start functions from here
-
-        //Hello World
-        HelloWorld helloWorld = new HelloWorld();
-        helloWorld.print();
-
-        HelloWorld helloWorld1 = new HelloWorld("Florian");
-        helloWorld1.print();
-
         //Math class
-
         MathClass mathClass = new MathClass();
-        System.out.println("Summe von 2 und 5: "+mathClass.addition(2, 5));
-        System.out.println("Summe der nat Zahlen bis 100: "+mathClass.calcSum(100));
-        System.out.println("Wurzel aus 2: "+mathClass.sqrt(2));
-        System.out.println("Pruduct bis 100: "+mathClass.product(100));
-        System.out.println("Pythagoras aus A=2 und B=9. C = "+mathClass.pythagoras(2, 9));
 
         //Console Input
         InOutReader inOutReader = new InOutReader();
 
-        //Get Name of User
-        System.out.print("Gib deinen Namen ein: ");
-        String name = inOutReader.getString();
-
-        //Get Age of User
-        System.out.print("Gib dein Alter ein: ");
-        int age = inOutReader.getInt();
-
-        //Return all Info
-        System.out.println("Hallo "+name+": \n" +
-                "Alter: "+age);
-
-        //Extra exercise
-
+        //Rechner exercise
         questionMath(inOutReader, mathClass);
 
 
@@ -59,9 +31,9 @@ public class Main {
 
             System.out.println("Was willst du nun tun ?\n" +
                     "a) Zwei Zahlen addieren ?\n" +
-                    "b) Summe aller Zahlen bis n ?\n" +
-                    "c) Wurzel berechnen ?\n" +
-                    "d) Produkt bis n ausrechnen?\n" +
+                    "b) Subtrahieren von 2 Zahlen?\n" +
+                    "c) Multiplizieren von 2 Zahlen?\n" +
+                    "d) Dividieren von 2 Zahlen?\n" +
                     "x) Prozess abbrechen");
             System.out.print("Gib ein was du machen willst (z.b. a, b, c oder d): ");
             String select = inOutReader.getString();
@@ -75,9 +47,25 @@ public class Main {
                     System.out.println("Summe von "+x+" und "+y+": "+mathClass.addition(x, y));
                     break;
                 case "b":
-                    System.out.print("Die Gib eine ganze Zahl ein: ");
-                    int n = inOutReader.getInt();
-                    System.out.println("Summe aller Zahlen bis "+n+": "+mathClass.calcSum(n));
+                    System.out.print("Gib die erste Zahl ein: ");
+                    double xMinus = inOutReader.getDouble();
+                    System.out.print("Gib die zweite Zahl ein: ");
+                    double yMinus = inOutReader.getDouble();
+                    System.out.println("Subtraktion von "+xMinus+" und "+yMinus+": "+mathClass.subtrahieren(xMinus, yMinus));
+                    break;
+                case "c":
+                    System.out.print("Gib die erste Zahl ein: ");
+                    double xMulti = inOutReader.getDouble();
+                    System.out.print("Gib die zweite Zahl ein: ");
+                    double yMulti = inOutReader.getDouble();
+                    System.out.println("Multiplikation von "+yMulti+" und "+yMulti+": "+mathClass.multiplikation(yMulti, yMulti));
+                    break;
+                case "d":
+                    System.out.print("Gib die erste Zahl ein: ");
+                    double xDivide = inOutReader.getDouble();
+                    System.out.print("Gib die zweite Zahl ein: ");
+                    double yDivide = inOutReader.getDouble();
+                    System.out.println("Division von "+xDivide+" und "+yDivide+": "+mathClass.division(xDivide, yDivide));
                     break;
                 case "x":
                     run = false;
