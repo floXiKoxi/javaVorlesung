@@ -8,31 +8,36 @@ public class AutoPrg {
 
     public static void main(String[] args){
 
-        Auto autoVW = new Auto("VW", "Golf", 4, 1.83, "Weiß");
+        Auto autoVW = new Auto("VW", "Golf", 1.83, "Weiß");
         autoVW.drucken();
 
         AutoPrg autoPrg = new AutoPrg();
-        autoPrg.fillArray();
-        autoPrg.printAutoArray();
+        autoPrg.go();
 
     }
-    private void fillArray(){
+    void go(){
+
+        fillArray();
+        printAutoArray();
+        printInstances();
+
+    }
+    void fillArray(){
 
         String[] herstellerArray = {"VW", "BMW", "Audi", "Opel", "Mercedes-Benz"};
         String[] typArray = {"Golf", "M3", "A5", "Corsa", "S-Klasse"};
         String[] farbArray = {"Weiß", "Blau", "Rot", "Grün", "Gelb"};
-        int raeder = 4;
         double breite = 2.05;
 
         for(int i=0; i<5;i++){
 
-            getAutoArray()[i] = new Auto(herstellerArray[i], typArray[i], raeder, breite, farbArray[i]);
+            getAutoArray()[i] = new Auto(herstellerArray[i], typArray[i], breite, farbArray[i]);
 
         }
         System.out.println("Auto Array gefüllt");
 
     }
-    private void printAutoArray(){
+    void printAutoArray(){
 
         for(Auto auto : getAutoArray()){
 
@@ -41,6 +46,9 @@ public class AutoPrg {
 
         }
 
+    }
+    void printInstances(){
+        System.out.println("Instanzen erstellt: "+Auto.instances);
     }
 
     public Auto[] getAutoArray() {

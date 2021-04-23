@@ -2,19 +2,22 @@ package de.flox.auto.utils;
 
 public class Auto {
 
-    private int raeder;
+    static int raeder = 4;
     private String hersteller, typ, farbe;
     private double breite;
+    public static int instances = 0;
 
     //Constructor
-    public Auto(){ }
+    public Auto(){
+        instances++;
+    }
 
-    public Auto(String hersteller, String typ, int raeder, double breite, String farbe){
+    public Auto(String hersteller, String typ, double breite, String farbe){
         this.hersteller = hersteller;
         this.typ = typ;
-        this.raeder = raeder;
         this.breite = breite;
         this.farbe = farbe;
+        instances++;
     }
 
     public void drucken(){
