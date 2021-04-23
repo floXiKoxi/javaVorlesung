@@ -2,7 +2,7 @@ package de.flox.auto.main;
 
 import de.flox.auto.utils.Auto;
 
-public class AutoPrg {
+public class AutoOO {
 
     private Auto[] autoArray = new Auto[5];
 
@@ -11,7 +11,7 @@ public class AutoPrg {
         Auto autoVW = new Auto("VW", "Golf", 1.83, "Weiß");
         autoVW.drucken();
 
-        AutoPrg autoPrg = new AutoPrg();
+        AutoOO autoPrg = new AutoOO();
         autoPrg.go();
 
     }
@@ -27,7 +27,9 @@ public class AutoPrg {
     void go(){
 
         Auto a = new Auto("VW", "Golf", 1.83, "Weiß");
-        Auto b = new Auto("BMW", "M3", 1.83, "Blau");
+        Auto b = new Auto("BMW", "M3", 1.83, "Weiß");
+
+        System.out.println("Test: "+a.equals(b));
 
         fillArray();
         printAutoArray();
