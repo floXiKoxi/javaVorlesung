@@ -1,8 +1,10 @@
-package de.flox.auto.utils;
+package de.flox.recyclinghof3.objekte;
 
-public class Auto {
+import de.flox.recyclinghof3.utils.Recyclebar;
 
-    static int raeder = 4;
+public class Auto implements Recyclebar {
+
+    private static int raeder = 4;
     private String hersteller, typ, farbe;
     private double breite;
     public static int instances = 0;
@@ -18,6 +20,27 @@ public class Auto {
         this.breite = breite;
         this.farbe = farbe;
         instances++;
+    }
+
+    @Override
+    public boolean equals(Object obj){
+
+        if(obj == null){
+            return false;
+        }
+        if(this == obj){
+            return true;
+        }
+
+        final Auto b = (Auto) obj;
+
+        if(hersteller.equals(b.getHersteller()) && typ.equals(b.getTyp())){
+            return true;
+        }
+        if(Double.compare(b.breite, breite) != 0){
+            return false;
+        }
+        return false;
     }
 
     public void drucken(){
@@ -39,6 +62,15 @@ public class Auto {
     public void lackiereAuto(String neueFarbe){
         setFarbe(neueFarbe);
         System.out.println("Das Auto wurde "+getFarbe()+" lackiert");
+    }
+    public void fahren(){
+
+        System.out.println("Das Auto fährt. Brumm brumm..");
+
+    }
+    @Override
+    public void recycle() {
+        System.out.println("Das Auto wird recycled. Sad sad");
     }
 
     //Setter
@@ -82,5 +114,6 @@ public class Auto {
     public String getFarbe() {
         return farbe;
     }
+
 }
 

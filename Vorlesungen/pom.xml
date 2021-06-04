@@ -11,6 +11,13 @@
     <modules>
         <module>Auto1</module>
         <module>Auto5</module>
+        <module>JPATest</module>
+        <module>Recyclinghof</module>
+        <module>CalculatorCallback</module>
+        <module>BenutzerException</module>
+        <module>AutoCollection</module>
+        <module>Collections2</module>
+        <module>SortCollections</module>
     </modules>
 
     <properties>

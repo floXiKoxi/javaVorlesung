@@ -1,9 +1,10 @@
-package de.flox.auto.utils;
+package de.flox.collection.produkte;
 
 public class Auto {
 
-    static int raeder = 4;
-    private String hersteller, typ, farbe;
+    private static int raeder = 4;
+    private String hersteller, typ;
+    private Farbe farbe;
     private double breite;
     public static int instances = 0;
 
@@ -12,12 +13,18 @@ public class Auto {
         instances++;
     }
 
-    public Auto(String hersteller, String typ, double breite, String farbe){
+    public Auto(String hersteller, String typ, double breite, Farbe farbe){
         this.hersteller = hersteller;
         this.typ = typ;
         this.breite = breite;
         this.farbe = farbe;
         instances++;
+    }
+
+    public enum Farbe {
+
+        SCHWARZ, WEISS, ROT, BLAU, GELB;
+
     }
 
     @Override
@@ -26,13 +33,28 @@ public class Auto {
         if(obj == null){
             return false;
         }
+        if(this == obj){
+            return true;
+        }
 
         final Auto b = (Auto) obj;
 
-        if(this.getHersteller() == b.getHersteller() && this.getTyp() == b.getTyp() && this.getBreite() == b.getBreite()){
+        if(hersteller.equals(b.getHersteller()) && typ.equals(b.getTyp())){
             return true;
         }
+        if(Double.compare(b.breite, breite) != 0){
+            return false;
+        }
         return false;
+    }
+
+    @Override
+    public String toString() {
+        return  "\nHersteller= " + hersteller +
+                "\nTyp= " + typ +
+                "\nFarbe= " + farbe +
+                "\nBreite= " + breite +
+                "\n\n================================";
     }
 
     public void drucken(){
@@ -40,20 +62,25 @@ public class Auto {
         System.out.println("Hersteller: "+getHersteller()+"\n" +
                 "Typ: "+getTyp()+"\n" +
                 "Räder: "+getRaeder()+"\n" +
-                "Breite: "+getBreite());
+                "Breite: "+getBreite()+"\n" +
+                "Farbe: "+getFarbe().toString());
 
         lackiereAuto();
-        lackiereAuto("rot");
 
     }
 
     //Methods
     public void lackiereAuto(){
-        lackiereAuto("schwarz");
+        lackiereAuto(Farbe.SCHWARZ);
     }
-    public void lackiereAuto(String neueFarbe){
+    public void lackiereAuto(Farbe neueFarbe){
         setFarbe(neueFarbe);
         System.out.println("Das Auto wurde "+getFarbe()+" lackiert");
+    }
+    public void fahren(){
+
+        System.out.println("Das Auto fährt. Brumm brumm..");
+
     }
 
     //Setter
@@ -73,7 +100,7 @@ public class Auto {
         this.typ = typ;
     }
 
-    public void setFarbe(String farbe) {
+    public void setFarbe(Farbe farbe) {
         this.farbe = farbe;
     }
 
@@ -94,7 +121,7 @@ public class Auto {
         return typ;
     }
 
-    public String getFarbe() {
+    public Farbe getFarbe() {
         return farbe;
     }
 }

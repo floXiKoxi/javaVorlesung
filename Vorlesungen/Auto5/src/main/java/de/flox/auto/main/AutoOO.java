@@ -1,6 +1,8 @@
 package de.flox.auto.main;
 
-import de.flox.auto.utils.Auto;
+import de.flox.auto.produkte.Auto;
+import de.flox.auto.produkte.Cabrio;
+import de.flox.auto.produkte.Farbe;
 
 public class AutoOO {
 
@@ -8,46 +10,38 @@ public class AutoOO {
 
     public static void main(String[] args){
 
-        Auto autoVW = new Auto("VW", "Golf", 1.83, "Weiß");
+        Auto autoVW = new Auto("VW", "Golf", 1.83, Farbe.WEISS);
         autoVW.drucken();
 
         AutoOO autoPrg = new AutoOO();
-        autoPrg.go();
+        //autoPrg.go();
+        autoPrg.cabrioMethod();
 
     }
-    void swap(Auto a, Auto b){
 
-        Auto t;
-        t = a;
-        a = b;
-        b = t;
-        System.out.println("Auto a=b: "+a.getHersteller());
-        System.out.println("Auto b=a: "+b.getHersteller());
+
+    public void cabrioMethod(){
+
+        Cabrio cabrio = new Cabrio("BMW", "3er", 2.03, Farbe.BLAU);
+        cabrio.fahren();
+
     }
-    void go(){
+    public void go(){
 
-        Auto a = new Auto("VW", "Golf", 1.83, "Weiß");
-        Auto b = new Auto("BMW", "M3", 1.83, "Weiß");
-
-        System.out.println("Test: "+a.equals(b));
+        Auto a = new Auto("VW", "Golf", 1.83, Farbe.WEISS);
 
         fillArray();
         printAutoArray();
         printInstances();
 
-        System.out.println("===================================");
-        System.out.println("Hersteller: "+a.getHersteller() + ", Typ: "+a.getTyp() +
-                ", Raeder: "+a.getRaeder()+ ", Breite: "+a.getBreite() + ", Farbe: "+a.getFarbe());
-        System.out.println("Hersteller: "+b.getHersteller() + ", Typ: "+b.getTyp() +
-                ", Raeder: "+b.getRaeder()+ ", Breite: "+b.getBreite() + ", Farbe: "+b.getFarbe());
-        swap(a, b);
+        a.fahren();
 
     }
-    void fillArray(){
+    public void fillArray(){
 
         String[] herstellerArray = {"VW", "BMW", "Audi", "Opel", "Mercedes-Benz"};
         String[] typArray = {"Golf", "M3", "A5", "Corsa", "S-Klasse"};
-        String[] farbArray = {"Weiß", "Blau", "Rot", "Grün", "Gelb"};
+        Farbe[] farbArray = {Farbe.WEISS, Farbe.SCHWARZ, Farbe.ROT, Farbe.BLAU, Farbe.GELB};
         double breite = 2.05;
 
         for(int i=0; i<5;i++){
@@ -58,7 +52,7 @@ public class AutoOO {
         System.out.println("Auto Array gefüllt");
 
     }
-    void printAutoArray(){
+    public void printAutoArray(){
 
         for(Auto auto : getAutoArray()){
 
@@ -68,7 +62,7 @@ public class AutoOO {
         }
 
     }
-    void printInstances(){
+    public void printInstances(){
         System.out.println("Instanzen erstellt: "+Auto.instances);
     }
 

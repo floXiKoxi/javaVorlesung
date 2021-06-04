@@ -1,6 +1,6 @@
 package de.flox.auto.main;
 
-import de.flox.auto.utils.Auto;
+import de.flox.auto.produkte.Auto;
 
 public class AutoPrg {
 
